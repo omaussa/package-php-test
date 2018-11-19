@@ -29,7 +29,7 @@ class TelegramServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config/telegram.php' => config_path('telegram.php'),
-        ])
+        ]);
     }
 
     /**
