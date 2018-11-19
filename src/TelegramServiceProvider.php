@@ -28,7 +28,7 @@ class TelegramServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/telegram.php' => config_path('telegram.php'),
+            __DIR__.'/../config/telegram.php' => config_path('telegram.php'),
         ]);
     }
 
@@ -40,7 +40,7 @@ class TelegramServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/telegram.php', 'telegram'
+            __DIR__.'/../config/telegram.php', 'telegram'
         );
     }
 
