@@ -27,46 +27,21 @@ class TelegramServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->setupConfig();
+        $this->publishes([
+            __DIR__.'/config/telegram.php' => config_path('telegram.php'),
+        ])
     }
 
     /**
-     * Setup the config.
-     *
-     * @return void
-     */
-    protected function setupConfig()
-    {
-        $source = realpath($raw = __DIR__.'/../config/telegram.php') ?: $raw;
-
-        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
-            $this->publishes([$source => config_path('telegram.php')]);
-        } elseif ($this->app instanceof LumenApplication) {
-            $this->app->configure('telegram');
-        }
-
-        $this->mergeConfigFrom($source, 'telegram');
-    }
-
-    /**
-     * Register the service provider.
+     * Register bindings in the container.
      *
      * @return void
      */
     public function register()
     {
-
+        $this->mergeConfigFrom(
+            __DIR__.'/config/telegram.php', 'telegram'
+        );
     }
 
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return string[]
-     */
-    public function provides()
-    {
-        return [
-            //
-        ];
-    }
 }
