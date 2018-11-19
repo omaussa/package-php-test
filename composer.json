@@ -1,0 +1,27 @@
+{
+    "name": "omaussa/telegram",
+    "description": "Laravel Telegram Package",
+    "type": "library",
+    "require": {
+        "longman/telegram-bot": "*"
+    },
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Orlando Maussa",
+            "email": "orlando.maussa@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omaussa\\Telegram\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Omaussa\\Telegram\\TelegramServiceProvider"
+            ]
+        }
+    },
+}
