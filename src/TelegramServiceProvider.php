@@ -18,7 +18,7 @@ use Laravel\Lumen\Application as LumenApplication;
  *
  * @author Orlando Maussa <https://github.com/omaussa>
  */
-class EmojiServiceProvider extends ServiceProvider
+class TelegramServiceProvider extends ServiceProvider
 {
     /**
      * Boot the service provider.
